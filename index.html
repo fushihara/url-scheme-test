@@ -9,16 +9,22 @@
 NodeList.prototype.forEach = Array.prototype.forEach;
 window.addEventListener("DOMContentLoaded",(e)=>{
   document.querySelector("#href").value = document.location.search.replace(/^\?/,"");
-  document.querySelector("button").addEventListener("click",()=>{
+  document.querySelector("#add").addEventListener("click",()=>{
     const href=document.querySelector("#href").value;
+    addUrl(href);
+  });
+  document.querySelector("#sample").addEventListener("click",()=>{
+    addUrl("https://example.com");
+  });
+}, false);
+function addUrl(url){
     const a = document.createElement("a");
     a.innerText = href;
     a.setAttribute("href",href);
     document.querySelector("#list").appendChild(a);
-  });
-}, false);
+}
 </script>
 <input type="text" id="href" placeholder="https://example.com"><br>
-<button>add</button>
+<button id="add">add</button><button id="sample">sample</button>
 <hr>
 <div id="list"></div>
