@@ -8,7 +8,7 @@
 NodeList.prototype.forEach = Array.prototype.forEach;
 window.addEventListener("DOMContentLoaded",(e)=>{
   document.querySelector("button").addEventListener("click",()=>{
-    const href=document.querySelector("#href");
+    const href=document.querySelector("#href").value;
     const a = document.createElement("a");
     a.innerText = href;
     a.setAttribute("href",href);
