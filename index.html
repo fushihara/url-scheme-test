@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<style>
+ *{word-break: break-all;box-sizing: border-box;}
+</style>
+<script>
+NodeList.prototype.forEach = Array.prototype.forEach;
+window.addEventListener("DOMContentLoaded",(e)=>{
+  document.querySelector("button").addEventListener("click",()=>{
+    const href=document.querySelector("#href");
+    const a = document.createElement("a");
+    a.innerText = href;
+    a.setAttribute("href",href);
+    document.querySelector("#list").appendChild(a);
+  });
+}, false);
+<input type="text" id="href" placeholder="https://example.com"><br>
+<button>add</button>
+<hr>
+<div id="list"></div>
